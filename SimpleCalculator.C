@@ -1,47 +1,49 @@
 #include <stdio.h>
-#include <math.h>
 
 int main(){
+
+    int n1;
+    int n2;
     char operator;
-    double num1;
-    double num2;
-    double y;
+    float z;
 
+    scanf(" %d", &n1);
+    scanf(" %c", &operator);
+    scanf(" %d", &n2);
 
-    printf("enter number a:" );
-    scanf ("%lf", &num1 );
-
-    printf( "enter number b: ");
-    scanf( "%lf", &num2 );
-
-    printf( "enter operator (+,-,*,/,^): ");
-    scanf( " %c", &operator );
-
-        switch ( operator ){
-        case '+': 
-            y = num1 + num2;
-            printf( " %lf ", y );
+    switch(operator){
+        case '+':
+            z = n1 + n2;
+            printf("%f", z);
             break;
-
-        case '-' : 
-            y = num1 - num2;
-            printf( " %lf ", y );
+        case '-':
+        z = n1 - n2;
+            printf("%f", z);
             break;
-
         case '*':
-            y = num1 * num2;
-            printf( " %lf ", y );
+            z = n1 * n2;
+            printf("%f", z);
             break;
-
-        case '/' : 
-            y = num1 / num2;
-            printf( " %lf " , y );
+        case '/':
+            z = n1 / n2;
+            printf("%f", z);
             break;
+        case '%':
+            z = n1 % n2;
+            printf("%f", z);
+            break;
+        case '^':
 
-        case '^' :
-            y = pow( num1 , num2 );
-            printf( " %lf " , y );
+            z=1;
+
+            for(int i=0; i< n2 ; i++){
+                z *= n1;
+            }
+            printf("%f", z);
+ 
+            break;
     }
 
+    
     return 0;
 }
